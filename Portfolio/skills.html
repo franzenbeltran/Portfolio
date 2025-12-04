@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills – Franzen Beltran</title>
+
+      <!-- Apply dark mode immediately -->
+  <script>
+    (function() {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--  NAVIGATION BAR  -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">FB</div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+<!--  SKILLS SECTION  -->
+<section id="skills" class="skills">
+    <div class="container">
+        <!-- Section Title -->
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+            
+            <!-- FRONTEND SKILLS -->
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>HTML & CSS</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>JavaScript</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BACKEND SKILLS -->
+            <div class="skill-category">
+                <h3>Backend</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Databases</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Python</span>
+                        <span class="skill-percent">82%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 82%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>PHP</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Java</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+            </div> <!-- end of .skill-category Backend -->
+
+        </div> <!-- end of .skills-grid -->
+
+        <!-- CERTIFICATES -->
+        <div class="certificates-container">
+            <h3>Certificates</h3>
+
+            <div class="certificate-item">
+                <img src="CertificatePsite.jpg" alt="Certificate of Participation" class="certificate-img">
+                <div class="skill-header">
+            <span>Certificate of Participation<br>
+                <span class="highlight-primary">PSITE-ICT Student Congress 2025</span>
+            </span>
+                </div>
+            </div>
+
+            <div class="certificate-item">
+                <img src="CertificateFreshie.png" alt="Certificate of Participation" class="certificate-img">
+                <div class="skill-header">
+            <span>Certificate of Participation<br>
+                <span class="highlight-primary">Freshie Hacks: College Survival 2025</span>
+            </span>
+                </div>
+            </div>
+        </div> <!-- end of .certificates-container -->
+
+    </div> <!-- end of .container -->
+</section>
+<!--  END SKILLS SECTION  -->
+
+<script src="script.js"></script>
+</body>
+</html>

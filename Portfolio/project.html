@@ -1,0 +1,146 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project – Franzen Beltran</title>
+
+  <!-- Apply dark mode immediately -->
+  <script>
+    (function() {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--  NAVIGATION BAR  -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">FB</div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+                <!-- Dark Mode Toggle Button -->
+                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button></li>            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+<!--  PROJECTS SECTION  -->
+    <!-- Featured projects showcase with clickable cards -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <!-- Section Title -->
+            <h2 class="section-title">Featured Projects</h2>
+            
+
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                
+                <!-- PROJECT 1: Rentify- landlord  -->
+                <div class="project-card" data-project="project1">
+                    <img src="Rentify.png" alt="Automated Attendance System" class="project-image">
+                    <div class="project-info">
+                        <h3>Rentify</h3>
+                        <p>A comprehensive web-based rental management system designed for landlords to easily organize tenants, track rent payments, manage maintenance requests, monitor income, and streamline all day-to-day property operations in one unified platform.</p>
+                        <p class="click-to-read">Click to view</p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Html</span>
+                            <span class="tech-tag">Css</span>
+                            <span class="tech-tag">Firebase</span>                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: Computer Cafe Kiosk Server side -->
+                <div class="project-card" data-project="project2">
+                    <img src="Server.png" alt="Automated Attendance System" class="project-image">
+                    <div class="project-info">
+                        <h3>CompFi (server)</h3>
+                        <p>Developed a server-client kiosk system for managing a computer cafe, supporting both customer and admin functionalities.</p>
+                        <p class="click-to-read">Click to view</p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">JavaFX</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3: Computer Cafe Kiosk Client side -->
+                <div class="project-card" data-project="project3">
+                    <img src="Client.png" alt="Automated Attendance System" class="project-image">
+                    <div class="project-info">
+                        <h3>CompFi (client)</h3>
+                        <p>This client app is used along with the sever application. It includes a starting window that requires database access to check available orders and its corresponding unit.</p>
+                        <p class="click-to-read">Click to view</p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">JavaFX</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4: Automated Attendance -->
+                <div class="project-card" data-project="project4">
+                    <img src="Automated.png" alt="Automated Attendance System" class="project-image">
+                    <div class="project-info">
+                        <h3>Automated Attendance System</h3>
+                        <p>Developed an automated attendance system using C programming, designed to streamline the process of recording and managing attendance in a classroom setting.</p>
+                        <p class="click-to-read">Click to view</p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">C Language</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  END PROJECTS SECTION  -->
+
+     <!--  PROJECT MODAL  -->
+
+    <!-- Modal popup for displaying detailed project information -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+    <!--  END PROJECT MODAL  -->
+
+    <!--  FOOTER  -->
+    <!-- Footer with copyright information -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Franzen Beltran. Portfolio. | Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+    <!--  END FOOTER  -->
+
+   <script src="script.js"></script>
+</body>
+</html>

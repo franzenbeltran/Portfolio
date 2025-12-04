@@ -1,0 +1,90 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience – Franzen Beltran</title>
+
+      <!-- Apply dark mode immediately -->
+  <script>
+    (function() {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--  NAVIGATION BAR  -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">FB</div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+<!--  EXPERIENCE SECTION  -->
+    <!-- Timeline of work experience -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <!-- Section Title -->
+            <h2 class="section-title">Experience</h2>
+            
+            <!-- Timeline -->
+            <div class="timeline">
+                
+                <!-- EXPERIENCE 1: College year -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>College – Bachelor of Science in Information Technology (BSIT)</h3>
+                        <p class="company">CTU | 2024 – Present (2nd Year)</p>
+                        <p>Currently pursuing BSIT, gaining extensive experience in web application development, system design, and project implementation. Completed various academic and practical projects, including automated attendance systems, kiosk management systems, and Rentify, an apartment/room rental management platform. Skilled in designing user interfaces, developing functional applications, and managing databases, showcasing full-cycle project experience from planning to deployment.</p>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 2: SHS year -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Senior High School (ICT Strand)</h3>
+                        <p class="company">AIT Senior High | 2023 – 2024</p>
+                        <p>Focused on Information and Communications Technology (ICT), building a foundation in programming, system design, and web application development. Completed multiple hands-on projects, including system proposals, which were successfully defended. Developed skills in web design, UI/UX, and functional application development.</p>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 3: personal web -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Independent Web Application Designer & Developer</h3>
+                        <p class="company">2024 – Present</p>
+                        <p>Currently developing personal web projects, including designing and building my own website to showcase my work. I consistently practice and improve my skills by experimenting with different layouts, UI/UX styles, and full-stack features. This includes working with front-end and back-end technologies, creating responsive designs, and learning new tools and frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  END EXPERIENCE SECTION  -->
+
+   <script src="script.js"></script>
+</body>
+</html>
+

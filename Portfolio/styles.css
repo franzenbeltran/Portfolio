@@ -1,0 +1,1020 @@
+/* ========================================
+   PORTFOLIO WEBSITE - CSS STYLESHEET
+   ======================================== */
+
+/*  CSS VARIABLES / COLOR THEME  */
+/* Define all colors and theme values here for easy customization */
+
+
+:root {
+  /* Primary Colors - Gradient palette */
+  --primary: #667eea;
+  --primary-dark: #5568d3;
+  --secondary: #764ba2;
+  --accent: #f093fb;
+
+  /* Dark Mode Colors */
+  --dark-bg: #0f172a;
+  --dark-surface: #1e293b;
+  --dark-border: #334155;
+
+  /* Light Mode Colors */
+  --light-bg: #ffffff;
+  --light-surface: #f8fafc;
+  --light-border: #e2e8f0;
+
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+
+  /* Status Colors */
+  --success: #10b981;
+  --error: #ef4444;
+}
+
+/*  DARK MODE THEME  */
+/* Override colors when dark mode is active */
+body.dark-mode {
+  --primary: #8b5cf6;
+  --secondary: #a78bfa;
+  --accent: #ec4899;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+/*  GLOBAL STYLES  */
+/* Reset and base styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*  NAVIGATION BAR  */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--light-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--light-border);
+}
+
+body.dark-mode {
+  /* Override ALL colors */
+  --primary: #8b5cf6;
+  --secondary: #a78bfa;
+  --accent: #ec4899;
+
+  /* Text colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+
+  /* Replace LIGHT MODE variables */
+  --light-bg: var(--dark-bg);
+  --light-surface: var(--dark-surface);
+  --light-border: var(--dark-border);
+
+  /* Set body background + text */
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Navigation Link Hover Underline Animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/*  HOME CSS  */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--light-surface) 0%, #f1f5f9 100%);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+}
+
+.hero-content {
+  flex: 1;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* Hero Title with Gradient */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+/* Hero Decoration (Floating Element) */
+.hero-decoration {
+  flex: 1;
+  height: 400px;
+  background: radial-gradient(circle at 30% 50%, rgba(102, 126, 234, 0.1), transparent);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+/*  END HOME  */
+
+/*  SECTION GENERAL STYLING  */
+section {
+  padding: 80px 20px;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*  ABOUT SECTION CSS  */
+.about {
+  background-color: var(--light-surface);
+}
+
+body.dark-mode .about {
+  background-color: var(--dark-surface);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* About Text Paragraphs */
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+/* About Statistics Container */
+.about-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Individual Stat Card */
+.stat {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .stat {
+  background: var(--dark-bg);
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/* Stat Numbers */
+.stat h3 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+/* Stat Labels */
+.stat p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+/*  END ABOUT SECTION CSS  */
+
+/*  PROJECTS SECTION CSS  */
+.projects {
+  background-color: var(--light-bg);
+}
+
+body.dark-mode .projects {
+  background-color: var(--dark-bg);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  background: var(--light-surface);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .project-card {
+  background: var(--dark-surface);
+}
+
+/* Project Card Hover Effect */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+/* Project Image Container */
+.project-image {
+  width: 100%;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+/* Project Image Hover Zoom */
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+/* Project Info Container */
+.project-info {
+  padding: 1.5rem;
+}
+
+/* Project Title */
+.project-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* Project Description */
+.project-info p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Technology Tags Container */
+.tech-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Individual Technology Tag */
+.tech-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+/*  END PROJECTS SECTION CSS  */
+
+/*  SKILLS SECTION CSS  */
+.skills {
+  background-color: var(--light-surface);
+}
+
+body.dark-mode .skills {
+  background-color: var(--dark-surface);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+/* Skill Category Title */
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+/* Individual Skill Item */
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+/* Skill Header (Name + Percentage) */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Skill Bar Background */
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--light-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body.dark-mode .skill-bar {
+  background: var(--dark-border);
+}
+
+/* Skill Progress Bar */
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.6s ease;
+  animation: slideIn 0.6s ease;
+}
+
+/* Skill Bar Animation */
+@keyframes slideIn {
+  from {
+    width: 0 !important;
+  }
+}
+
+.certificates-container {
+    display: flex;
+    flex-direction: row; /* side by side */
+    justify-content: center; /* center horizontally */
+    gap: 2rem; /* spacing between certificates */
+    flex-wrap: wrap; /* wrap to next line on small screens */
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.certificates-container h3 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* certificate-item stays the same */
+.certificate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certificate-img {
+    width: 100%;
+    max-width: 250px;
+    height: 150px; /* set a uniform height */
+    object-fit: cover; /* ensures it fills the box without stretching */
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    transition: all 0.3s ease;
+}
+
+
+body.dark-mode .certificate-img {
+    border-color: var(--dark-border);
+}
+
+.certificate-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    border-color: var(--primary);
+}
+
+.highlight-primary {
+    color: var(--primary);
+}
+
+/*  END SKILLS SECTION CSS  */
+
+/*  EXPERIENCE SECTION CSS  */
+.experience {
+  background-color: var(--light-bg);
+}
+
+body.dark-mode .experience {
+  background-color: var(--dark-bg);
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Timeline Vertical Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+/* Timeline Item */
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Timeline Item Odd (Left Side) */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  margin-right: auto;
+  width: 45%;
+  text-align: right;
+}
+
+/* Timeline Item Even (Right Side) */
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+  width: 45%;
+  text-align: left;
+}
+
+/* Timeline Marker (Dot) */
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 4px solid var(--primary);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+body.dark-mode .timeline-marker {
+  background: var(--dark-surface);
+}
+
+/* Timeline Content Box */
+.timeline-content {
+  background: var(--light-surface);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .timeline-content {
+  background: var(--dark-bg);
+}
+
+/* Timeline Content Hover */
+.timeline-content:hover {
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Timeline Content Title */
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+/* Company Name */
+.timeline-content .company {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Timeline Content Description */
+.timeline-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+/*  END EXPERIENCE SECTION CSS  */
+
+/*  CONTACT SECTION CSS  */
+.contact {
+  background-color: var(--light-surface);
+}
+
+body.dark-mode .contact {
+  background-color: var(--dark-surface);
+}
+
+/* Contact Content Grid */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Contact Info Section */
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Individual Social Link */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--light-bg);
+  color: var(--primary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+body.dark-mode .social-link {
+  background: var(--dark-bg);
+}
+
+/* Social Link Hover */
+.social-link:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* ===== CONTACT SECTION (NO FORM) ===== */
+.contact {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: var(--light-surface);
+}
+
+body.dark-mode .contact {
+  background: var(--dark-surface);
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--light-bg);
+  color: var(--primary);
+  transition: 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .contact-icon {
+  background: var(--dark-bg);
+}
+
+.contact-icon:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+/*  END CONTACT SECTION CSS  */
+
+/*  PROJECT MODAL CSS  */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: var(--light-bg);
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+body.dark-mode .modal-content {
+  background: var(--dark-surface);
+}
+
+/* Modal Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+/* Modal Body Styling */
+.modal-body h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.modal-body p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.github-button {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+  margin-top: 1rem;
+}
+
+.github-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.35);
+}
+
+body.dark-mode .github-button {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+}
+
+/*  END PROJECT MODAL CSS  */
+
+/*  FOOTER  */
+.footer {
+  background: var(--light-surface);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--light-border);
+}
+
+body.dark-mode .footer {
+  background: var(--dark-surface);
+  border-top-color: var(--dark-border);
+}
+
+/*  RESPONSIVE DESIGN  */
+
+/* Mobile and Tablet Breakpoints */
+
+/* Tablet and Below (768px) */
+@media (max-width: 768px) {
+  /* Hide full nav menu, show hamburger */
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero Section - Stack vertically */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-decoration {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  /* About Section - Single column */
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    flex-direction: column;
+  }
+
+  /* Contact Section - Single column */
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline - Adjust for mobile */
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 100%;
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .timeline-marker {
+    left: 20px;
+  }
+
+  /* Projects Grid - Single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Skills Grid - Single column */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  /* Hero Title - Smaller on mobile */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  /* Section Titles - Smaller on mobile */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Section Padding - Reduced on mobile */
+  section {
+    padding: 40px 15px;
+  }
+
+  /* Navigation Container - Adjusted padding */
+  .nav-container {
+    padding: 1rem 15px;
+  }
+}
+
+/* Highlight the Click to Read text */
+.click-to-read {
+    color: #ffffff;              /* Default color: white */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-decoration: none;       /* Remove default underline */
+}
+
+.click-to-read:hover {
+    color: #8a2be2;              /* Change to purple on hover */
+    text-shadow: 0 0 8px #8a2be2; /* Subtle glow effect */
+}

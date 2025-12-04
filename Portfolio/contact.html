@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Franzen Beltran</title>
+
+      <!-- Apply dark mode immediately -->
+  <script>
+    (function() {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!--  NAVIGATION BAR  -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">FB</div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="project.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!--  CONTACT SECTION  -->
+    <!-- Contact form and social links -->
+<section class="contact">
+  <div class="contact-container">
+
+    <h2 class="contact-title">Let's Work Together</h2>
+    <p class="contact-subtitle">
+      I'm always interested in hearing about new projects and opportunities. Feel free to reach out through any of my socials below.
+    </p>
+
+    <div class="contact-icons">
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/Mamen170" target="_blank" class="contact-icon">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <!-- Gmail -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=franzenbeltran123@gmail.com" 
+        class="contact-icon"
+        target="_blank"
+        rel="noopener noreferrer">
+        <i class="fas fa-envelope"></i>
+        </a>
+
+
+      <!-- GitHub -->
+      <a href="https://github.com/franzenbeltran" target="_blank" class="contact-icon">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/franzen-beltran-b4362039b/" target="_blank" class="contact-icon">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a2e860f1e6.js" crossorigin="anonymous"></script>
+
+
+    <script>
+    (function() {
+        emailjs.init("oTRZxLIpGVi2CXzqU");
+    })();
+    </script>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
